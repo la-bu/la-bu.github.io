@@ -1,14 +1,12 @@
 ---
-title: About Aidan Charles Powell
+title: About
 layout: about.njk
-name: Aidan Charles Powell
-image: '/images/me.jpeg'
+name: Lars
+image: '/images/me-avatar.png'
 ---
 
-Aidan Charles Powell is a 23-year-old health centre receptionist who enjoys watching television, eating out and social media. He is generous and giving, but can also be very rude and a bit lazy.
+Hi, I'm Lars—a fullstack software engineer with a unique blend of creativity and technical expertise. I began my career in music production and audio engineering, where I honed my attention to detail and passion for creative problem-solving. After realizing that the rhythm of tech was calling me, I transitioned into software development, completing a rigorous apprenticeship in just two years and now thriving as an intermediate developer with a keen focus on frontend projects.
 
-He is a Jedi who defines himself as straight. He has a degree in medicine. He is a vegetarian. He is obsessed with vintage dresses.
+My diverse background has shaped me into a well-rounded professional who approaches challenges with both analytical precision and a creative mindset. Whether I'm coding, experimenting with AI, tinkering with tech hardware, or even exploring the quirky insights of astrology, I bring enthusiasm and a touch of humor to everything I do. I’m always eager to learn, adapt, and contribute to projects that make a real impact.
 
-He grew up in a middle class neighbourhood. After his mother died when he was young, he was raised by his father
-
-He is currently married to Maureen Erika Quinn. Maureen is 13 years older than him and works as a sales assistant.
+If you're looking for someone who is not only technically proficient but also brings a unique perspective and drive to innovate, I'd love to connect. Thanks for taking the time to get to know me!
