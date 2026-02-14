@@ -94,4 +94,26 @@ function formatDate(date: Date) {
     grid-column: 1 / -1;
     grid-row: 2;
   }
+
+  @media (max-width: 480px) {
+    .post-link {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .post-title {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .post-date {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .post-description {
+      grid-column: 1;
+      grid-row: 3;
+    }
+  }
 </style>
