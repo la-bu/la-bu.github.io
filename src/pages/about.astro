@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { skills } from '../data/projects';
 ---
 
 <BaseLayout title="About — la-bu" description="A little bit about me.">
@@ -8,38 +9,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>About</h1>
     </header>
 
-    <section class="section">
-      <h2>Bio</h2>
-      <p>
-        Hi, I'm la-bu — a developer interested in building clean, fast, and
-        thoughtful software. I care about good design, clear writing, and making
-        things that are a pleasure to use.
-      </p>
-      <p>
-        I work mostly in TypeScript and Python, and I'm drawn to the web as a
-        platform because of how accessible it is to both builders and users.
-      </p>
-    </section>
+    <div class="hero">
+      <div class="text">
+        <p>
+          Hi, I'm la-bu — a developer interested in building clean, fast, and
+          thoughtful software. I care about good design, clear writing, and making
+          things that are a pleasure to use.
+        </p>
+        <p>
+          I work mostly in TypeScript and Python, and I'm drawn to the web as a
+          platform because of how accessible it is to both builders and users.
+        </p>
+        <p>
+          Outside of code, I spend time reading, thinking about systems and ideas,
+          and occasionally making things with my hands. This site is a place to
+          think out loud — equal parts dev blog and digital notebook.
+        </p>
+        <p>
+          If something here resonates, feel free to reach out.
+        </p>
+      </div>
+
+      <div class="photo-placeholder" aria-hidden="true">
+        {/* Replace this div with an <img> once you have a photo */}
+      </div>
+    </div>
 
     <section class="section">
-      <h2>Currently focused on</h2>
-      <ul>
-        <li>Building in public — writing about what I learn as I learn it</li>
-        <li>Web performance and the craft of minimal interfaces</li>
-        <li>Exploring static site generation and content-first web development</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>A personal note</h2>
-      <p>
-        Outside of code, I spend time reading, thinking about systems and ideas,
-        and occasionally making things with my hands. This site is a place to
-        think out loud — equal parts dev blog and digital notebook.
-      </p>
-      <p>
-        If something here resonates, feel free to reach out.
-      </p>
+      <h2>Tech Stack</h2>
+      <div class="skills-groups">
+        {skills.map((group) => (
+          <ul class="tag-list">
+            {group.map((skill) => (
+              <li class="tag">{skill}</li>
+            ))}
+          </ul>
+        ))}
+      </div>
     </section>
   </div>
 </BaseLayout>
@@ -51,13 +57,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: var(--space-12) var(--space-6);
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
+    gap: var(--space-10);
   }
 
   .page-header h1 {
     font-size: var(--text-3xl);
     font-weight: 700;
     line-height: var(--leading-tight);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  p {
+    color: var(--color-text);
+    line-height: var(--leading-normal);
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
   }
 
   .section {
@@ -71,26 +103,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 600;
   }
 
-  p {
-    color: var(--color-text);
-    line-height: var(--leading-normal);
-  }
-
-  ul {
-    padding-left: var(--space-6);
+  .tag-list {
+    list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--space-2);
   }
 
-  li {
-    line-height: var(--leading-normal);
+  .tag {
+    font-size: var(--text-xs);
+    font-family: var(--font-mono);
+    background-color: var(--color-bg-subtle);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: var(--space-1) var(--space-2);
+    border-radius: 3px;
   }
 
-  @media (max-width: 480px) {
+  .skills-groups {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 640px) {
     .page {
       padding: var(--space-8) var(--space-4);
       gap: var(--space-8);
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .photo-placeholder {
+      aspect-ratio: 1 / 1;
+      max-width: 240px;
     }
   }
 </style>

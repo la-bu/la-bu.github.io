@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { projects, skills } from '../data/projects';
+import { projects } from '../data/projects';
 ---
 
 <BaseLayout title="Portfolio — la-bu" description="Projects I've built and technologies I work with.">
@@ -38,24 +38,12 @@ import { projects, skills } from '../data/projects';
       </div>
     </section>
 
-    <section class="section">
-      <h2>Tech Stack</h2>
-      <div class="skills-groups">
-        {skills.map((group) => (
-          <ul class="tag-list">
-            {group.map((skill) => (
-              <li class="tag">{skill}</li>
-            ))}
-          </ul>
-        ))}
-      </div>
-    </section>
   </div>
 </BaseLayout>
 
 <style>
   .page {
-    max-width: var(--max-width-wide);
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--space-12) var(--space-6);
     display: flex;
@@ -148,9 +136,4 @@ import { projects, skills } from '../data/projects';
     border-radius: 3px;
   }
 
-  .skills-groups {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
 </style>
