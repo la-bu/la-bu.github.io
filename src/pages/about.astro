@@ -86,4 +86,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   li {
     line-height: var(--leading-normal);
   }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: var(--space-8) var(--space-4);
+      gap: var(--space-8);
+    }
+  }
 </style>
