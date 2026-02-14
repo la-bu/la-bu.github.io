@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { skills } from '../data/projects';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { skills } from "../data/projects";
 ---
 
 <BaseLayout title="About — la-bu" description="A little bit about me.">
@@ -11,22 +11,25 @@ import { skills } from '../data/projects';
 
     <div class="hero">
       <div class="text">
+        <h2>Servus, I'm Lars.</h2>
         <p>
-          Hi, I'm la-bu — a developer interested in building clean, fast, and
-          thoughtful software. I care about good design, clear writing, and making
-          things that are a pleasure to use.
-        </p>
-        <p>
-          I work mostly in TypeScript and Python, and I'm drawn to the web as a
-          platform because of how accessible it is to both builders and users.
-        </p>
-        <p>
-          Outside of code, I spend time reading, thinking about systems and ideas,
-          and occasionally making things with my hands. This site is a place to
-          think out loud — equal parts dev blog and digital notebook.
-        </p>
-        <p>
-          If something here resonates, feel free to reach out.
+          Fullstack dev based in Stuttgart. <br /><br />
+
+          At work I write Java and TypeScript, translate business needs into actual software, and bridge the gap between dev teams,
+          project leads, and customers. It's the kind of work I genuinely enjoy and there's something satisfying about making things
+          click together.<br /><br />
+
+          Outside of work, I have too many interests and not enough hours in the day which means life never gets boring 😊 <br />
+          The constants: lifting weights, running, eating well, and generally trying to feel good in my own skin.<br />
+          Then there's everything else that comes and goes depending on the season or whatever I'm currently obsessed with. Music production,
+          alpine hiking, skiing, audiophile rabbit holes, building furniture, traveling, and tinkering with side projects like this blog.
+          <br />
+          The music production one always catches people off guard. I actually did it professionally for two years after school before I
+          decided it wasn't the life I wanted and made the deliberate switch to software. Still make music though, just for myself now.
+          <br />
+          This blog is a mix of whatever I feel like writing about. Tech posts when I learn something worth sharing, music nerd stuff when
+          I'm deep in a rabbit hole, travel logs, build diaries, random thoughts. No strict format, just things I want to put out into the
+          world.
         </p>
       </div>
 
@@ -38,13 +41,15 @@ import { skills } from '../data/projects';
     <section class="section">
       <h2>Tech Stack</h2>
       <div class="skills-groups">
-        {skills.map((group) => (
-          <ul class="tag-list">
-            {group.map((skill) => (
-              <li class="tag">{skill}</li>
-            ))}
-          </ul>
-        ))}
+        {
+          skills.map((group) => (
+            <ul class="tag-list">
+              {group.map((skill) => (
+                <li class="tag">{skill}</li>
+              ))}
+            </ul>
+          ))
+        }
       </div>
     </section>
   </div>
