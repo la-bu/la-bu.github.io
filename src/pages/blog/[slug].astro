@@ -20,6 +20,7 @@ function formatDate(date: Date) {
 
 <BaseLayout title={`${post.data.title} — la-bu`} description={post.data.description}>
   <div class="page">
+    <a href="/" class="back-link">← Back</a>
     <header class="post-header">
       <h1>{post.data.title}</h1>
       <time datetime={post.data.pubDate.toISOString()}>
@@ -37,10 +38,25 @@ function formatDate(date: Date) {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--space-12) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-accent);
+    transform: translateX(-3px);
   }
 
   .post-header {
-    margin-bottom: var(--space-12);
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
