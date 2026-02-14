@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Personal blog and portfolio of la-bu.' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+
+    <!-- Blocking theme script: runs before paint to prevent flash -->
+    <script is:inline>
+      (function () {
+        var override = localStorage.getItem('theme-override');
+        if (override) {
+          document.documentElement.dataset.theme = override;
+          return;
+        }
+        var hour = new Date().getHours();
+        document.documentElement.dataset.theme =
+          hour < 6 || hour >= 18 ? 'dark' : 'light';
+      })();
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

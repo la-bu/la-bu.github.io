@@ -1,0 +1,121 @@
+/* ─── Color tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f7f7f7;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-border: #e2e2e2;
+  --color-accent: #0057d9;
+  --color-accent-hover: #0046b0;
+  --color-code-bg: #f0f0f0;
+  --color-code-text: #c7254e;
+}
+
+[data-theme="dark"] {
+  --color-bg: #111111;
+  --color-bg-subtle: #1c1c1c;
+  --color-text: #e8e8e8;
+  --color-text-muted: #909090;
+  --color-border: #2e2e2e;
+  --color-accent: #5b9aff;
+  --color-accent-hover: #80b2ff;
+  --color-code-bg: #1e1e1e;
+  --color-code-text: #f08080;
+}
+
+/* ─── Typography scale ──────────────────────────────────────────────────────── */
+:root {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.6;
+}
+
+/* ─── Spacing scale ─────────────────────────────────────────────────────────── */
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --max-width: 72ch;
+  --max-width-wide: 90rem;
+}
+
+/* ─── Base reset ────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background-color: var(--color-code-bg);
+  padding: var(--space-4) var(--space-6);
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: var(--leading-snug);
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}

@@ -1,0 +1,82 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navLinks = [
+  { href: '/', label: 'Blog' },
+  { href: '/about', label: 'About' },
+  { href: '/portfolio', label: 'Portfolio' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="site-title">la-bu</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        {navLinks.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              aria-current={currentPath === href ? 'page' : undefined}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <ThemeToggle />
+  </div>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .header-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .site-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-right: auto;
+  }
+
+  .site-title:hover {
+    color: var(--color-accent);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-6);
+  }
+
+  nav a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  nav a:hover,
+  nav a[aria-current="page"] {
+    color: var(--color-text);
+  }
+
+  nav a[aria-current="page"] {
+    font-weight: 600;
+  }
+</style>
